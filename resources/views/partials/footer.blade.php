@@ -1,6 +1,6 @@
 <footer>
     <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+    <strong>Copyright &copy; {{ date('Y') }} <a href="#">Three Hammers</a>.</strong> All Rights Reserved. 
     </div>
     <div class="clearfix"></div>
 </footer>

@@ -22,3 +22,8 @@ Route::resource('project','ProjectController');
 Route::resource('dips','DIPController');
 
 Route::resource('trainings','TrainingController');
+
+Route::resource('ngo','NGOController');
+
+Route::get('dip/create', ['as' => 'dip.create','uses' => 'DIPController@create']);
+Route::get('dip/store', ['as' => 'dip.store','uses' => 'DIPController@store']);

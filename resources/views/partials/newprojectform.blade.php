@@ -1,7 +1,4 @@
 @extends('layouts.app')
-
-
-
     @section('stylesheet')
         @include('partials.stylesheet.home')
     @endsection
@@ -72,19 +69,18 @@
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Zone</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        {{Form::select('zone', $zones, null, ['placeholder'=>'-- Select Zone --','class'=>'form-control col-md-7 col-xs-12 zone'])}}
+                                        {{Form::select('zone_id', $zones, null, ['placeholder'=>'-- Select Zone --','class'=>'form-control col-md-7 col-xs-12 zone'])}}
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12">District</label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select class="form-control col-md-7 col-xs-12 district" name="district">
+                                        <select class="form-control col-md-7 col-xs-12 district" name="district_id">
                                             <option value="">-- Select District --</option>
                                             @foreach($districts as $district)
-                                            <option value="{{$district->district_id}}">{{$district->district_name}}</option>
+                                            <option class="hide" data-attr="{{$district->zone_id}}" value="{{$district->district_id}}">{{$district->district_name}}</option>
                                             @endforeach
                                         </select>
-                                        <input class="form-control col-md-7 col-xs-12" type="text" name="district">
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -117,10 +113,11 @@
                                      col-xs-12 col-md-offset-3">
 {{--                                        {{ link_to_route('home','Cancel',null, ['class'=>'btn btn-primary']) }}--}}
                                         <a href="{{ url('home') }}" class="btn btn-primary">Cancel</a>
-                                        <button class="btn btn-primary" type="reset">Reset</button>
+                                        {{-- <button class="btn btn-primary" type="reset">Reset</button> --}}
                                         <button type="submit"  class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
+
 
                             </form>
                         </div>

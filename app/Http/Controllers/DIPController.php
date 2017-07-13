@@ -23,7 +23,7 @@ class DIPController extends Controller
      */
     public function create()
     {
-        return view('partials.newprojectform');
+        return view('dip/create');
     }
 
     /**

@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,7 +46,7 @@ class ProjectController extends Controller
     {
 //        dd($request);
         Project::create($request->all());
-        return redirect()->route('home')->with('message','Project has been added successfully.');
+        return redirect()->route('project.index')->with('message','Project has been added successfully.');
     }
 
     /**
@@ -65,7 +69,9 @@ class ProjectController extends Controller
     public function edit($id)
     {
         $project= Project::findOrFail($id);
-        return view('edit', compact('project'));
+        $zones = Zone::pluck('zone_name', 'zone_id');
+        $districts = District::all();
+        return view('edit', compact('project', 'zones', 'districts'));
     }
 
     /**

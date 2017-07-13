@@ -6,6 +6,7 @@
                 <h2>Add New Training Participation</h2>
                 <div class="clearfix"></div>
             </div>
+            
             <div class="x_content">
                 <br />
                 {{Form::open(['route'=>'trainings.store', 'id'=>'demo-form2', 'class'=>'form-horizontal form-label-left', 'data-parsley-validate'])}}

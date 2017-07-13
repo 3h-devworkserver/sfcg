@@ -43,7 +43,7 @@
                       <ul class="nav child_menu" style="display: none">
                           <li><a>Select Plan<span class="fa fa-chevron-down"></span></a>
                             <ul class="nav child_menu" style="display: none">
-                              <li class="sub_menu"><a href="level2.html">DIP Management</a>
+                              <li class="sub_menu"><a href="{{ route('dips.index') }}">DIP Management</a>
                               </li>
                               <li><a href="#level2_1">SIP Management</a>
                               </li>
@@ -52,25 +52,19 @@
                       </ul>
                     </li>
 
-                    <li {{ Request::is('/dip') ? 'active open' : '' }} >
-                        <a ><i class="fa fa-edit"></i>Implementation Plan Management <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav side-menu">
-                        <li>
-                            <a ><i class="fa "></i>Select a Plan <span class="fa fa-chevron-down"></span></a>
-                           
-                            <ul class="nav child_menu">
-                                <li><a href="{{ route('dips.index') }}">All DIPs</a></li>
-                                <li><a href="{{ route('dips.create') }}">Add New DIP</a></li>
-                            </ul>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li {{ Request::is('/training') ? 'active open' : '' }} >
+                    <li {{ Request::is('/trainings') ? 'active open' : '' }} >
                         <a ><i class="fa fa-edit"></i> Training Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu">
                             <li><a href="{{ route('trainings.index') }}">All Trainings</a></li>
                             <li><a href="{{ route('trainings.create') }}">Add New Training</a></li>
+                        </ul>
+                    </li>
+
+                    <li {{ Request::is('/ngo') ? 'active open' : '' }} >
+                        <a ><i class="fa fa-edit"></i> NGO Management <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu">
+                            <li><a href="{{ route('ngo.index') }}">All NGO</a></li>
+                            <li><a href="{{ route('ngo.create') }}">Add New NGO</a></li>
                         </ul>
                     </li>
 

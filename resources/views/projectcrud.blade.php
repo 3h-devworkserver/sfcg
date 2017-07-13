@@ -16,12 +16,11 @@
                 <table id="datatable" class="table table-striped table-bordered">
                     <thead>
                     <tr>
-                        <th>S.N.</th>
+                        <th>ID</th>
                         <th>Project Code</th>
                         <th>Project Name</th>
                         <th>Donor Code</th>
                         <th>Partners</th>
-                        <th>District</th>
                         <th>Signed Date</th>
                         <th>Total Budget</th>
                         <th>Action</th>
@@ -37,7 +36,6 @@
                         <td> {{ $project->project_name }}</td>
                         <td> {{ $project->donor_code }}</td>
                         <td> {{ $project->partners }}</td>
-                        <td> {{ $project->district }}</td>
                         <td> {{ $project->signed_date }}</td>
                         <td> NPR {{ $project->total_budget }}</td>
                         <td>

@@ -1,20 +1,3 @@
-@extends('layouts.app')
-
-@section('stylesheet')
-    @include('partials.stylesheet.home')
-@endsection
-
-@section('class-body')
-    nav-md
-@endsection
-
-@section('content')
-
-    @include('partials.sidebar')
-    @include('partials.header')
-
-    <div class="right_col" role="main">
-        <div class="">
 
             @extends('layouts.app')
 
@@ -34,27 +17,14 @@
                 @include('partials.sidebar')
                 @include('partials.header')
 
+
                 <div class="right_col" role="main">
                     <div class="row">
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_title">
-                                    <h2>Add New Project <small>different form elements</small></h2>
-                                    <ul class="nav navbar-right panel_toolbox">
-                                        <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Settings 1</a>
-                                                </li>
-                                                <li><a href="#">Settings 2</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                        </li>
-                                    </ul>
+                                    <h2>Edit Project </h2>
+                                   
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="x_content">
@@ -89,12 +59,26 @@
                                                 <input id="middle-name" value="{{ $project->partners }}" class="form-control col-md-7 col-xs-12" type="text" name="partners">
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">District</label>
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Zone</label>
                                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                                <input id="middle-name" value="{{ $project->district }}"class="form-control col-md-7 col-xs-12" type="text" name="district">
+                                                {{Form::select('zone_id', $zones, $project->zone_id, ['placeholder'=>'-- Select Zone --','class'=>'form-control col-md-7 col-xs-12 zone'])}}
                                             </div>
                                         </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label col-md-3 col-sm-3 col-xs-12">District</label>
+                                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                                <select class="form-control col-md-7 col-xs-12 district" name="district_id" data-district ="{{$project->district_id}}">
+                                                    <option value="">-- Select District --</option>
+                                                    @foreach($districts as $district)
+                                                    <option class="hide" data-attr="{{$district->zone_id}}" value="{{$district->district_id}}">{{$district->district_name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+
                                         <div class="form-group">
                                             <label class="control-label col-md-3 col-sm-3 col-xs-12">Signed Date <span class="required">*</span>
                                             </label>
@@ -125,7 +109,7 @@
                                      col-xs-12 col-md-offset-3">
                                                 {{--                                        {{ link_to_route('home','Cancel',null, ['class'=>'btn btn-primary']) }}--}}
                                                 <a href="{{ url('home') }}" class="btn btn-primary">Cancel</a>
-                                                <button class="btn btn-primary" type="reset">Reset</button>
+                                                {{-- <button class="btn btn-primary" type="reset">Reset</button> --}}
                                                 <button type="submit"  class="btn btn-success">Submit</button>
                                             </div>
                                         </div>
@@ -144,13 +128,6 @@
                 @include('partials.scripts.home')
             @endsection
 
-        </div>
-    </div>
-    @include('partials.footer')
+        
 
-@endsection
 
-@section('script')
-    @include('partials.scripts.home')
-
-@endsection

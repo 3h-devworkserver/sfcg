@@ -122,57 +122,51 @@
                         <table class="table table-striped table-bordered">
                             <tr>
                                 <th>Caste</th>
-                                <th>Male</th>
-                                <th>Female</th>
+                                <th>Madhesi/Terai</th>
+                                <th>Dalit</th>
+                                <th>Muslim</th>
+                                <th>Tharu</th>
+                                <th>Disadvantage</th>
+                                <th>Brahmin/Chhetri</th>
+                                <th>Pahade</th>
+                                <th>Others</th>
                                 <th>Total</th>
                             </tr>
                             <tr>
-                                <th>Madhesi/Terai</th>
+                                <th>Below 15</th>
                                 <td>{{$maleMadhesiTerai}}</td>
                                 <td>{{$femaleMadhesiTerai}}</td>
-                                <td>{{$maleMadhesiTerai + $femaleMadhesiTerai}}</td>
+                                <td>{{$maleMuslim}}</td>
+                                <td>{{$femaleMuslim}}</td>
+                                <td>{{$maleTharu}}</td>
+                                <td>{{$femaleTharu}}</td>
+                                <td>{{$maleDisadvantage}}</td>
+                                <td>{{$femaleDisadvantage}}</td>
+                                <td>{{$maleBrahminChhetri}}</td>
+                                <td>{{$femaleBrahminChhetri}}</td>
+                                <td>{{$malePahade}}</td>
+                                <td>{{$femalePahade}}</td>
+                                <td>{{$maleOthers}}</td>
+                                <td>{{$femaleOthers}}</td>
+                                <td>{{$maleBelow15 + $femaleBelow15}} </td>
                             </tr>
                             <tr>
-                                <th>Dalit</th>
-                                <td>{{$maleDalit}}</td>
-                                <td>{{$femaleDalit}}</td>
-                                <td>{{$maleDalit + $femaleDalit}}</td>
-                            </tr>
-                            <tr>
-                                <th>Muslim</th>
+                                <th>15-29</th>
                                 <td>{{$male15_29}}</td>
                                 <td>{{$female15_29}}</td>
                                 <td>{{$male15_29 + $female15_29 }}</td>
                             </tr>
                             <tr>
-                                <th>Tharu</th>
-                                <td>{{$maleTharu}}</td>
-                                <td>{{$femaleTharu}}</td>
-                                <td>{{$maleTharu + $femaleTharu}}</td>
+                                <th>30-45</th>
+                                <td>{{$male30_45}}</td>
+                                <td>{{$female30_45}}</td>
+                                <td>{{$male30_45 + $female30_45}}</td>
                             </tr>
                             <tr>
-                                <th>Disadvantage</th>
-                                <td>{{$maleDisadvantage}}</td>
-                                <td>{{$femaleDisadvantage}}</td>
-                                <td>{{$maleDisadvantage + $femaleDisadvantage}}</td>
-                            </tr>
-                            <tr>
-                                <th>Brahmin/Chhetri</th>
-                                <td>{{$maleBrahminChhetri}}</td>
-                                <td>{{$femaleTharu}}</td>
-                                <td>{{$maleBrahminChhetri + $femaleTharu}}</td>
-                            </tr>
-                            <tr>
-                                <th>Pahade</th>
-                                <td>{{$malePahade}}</td>
-                                <td>{{$femalePahade}}</td>
-                                <td>{{$malePahade + $femalePahade}}</td>
-                            </tr>
-                            <tr>
-                                <th>Others</th>
-                                <td>{{$maleOthers}}</td>
-                                <td>{{$femaleOthers}}</td>
-                                <td>{{$maleOthers + $femaleOthers}}</td>
+                                <th>45-Above</th>
+                                <td>{{$male45Above}}</td>
+                                <td>{{$female45Above}}</td>
+                                <td>{{$male45Above + $female45Above}}</td>
                             </tr>
                             <tr>
                                 <th>Total</th>
@@ -191,76 +185,6 @@
                     <div class="x_title">
                         <h2>Professional</h2>
                         <div class="clearfix"></div>
-                    </div>
-                    <div class="x_content">
-                        <table class="table table-striped table-bordered">
-                            <tr>
-                                <th>Professional</th>
-                                <th>Male</th>
-                                <th>Female</th>
-                                <th>Total</th>
-                            </tr>
-                            <tr>
-                                <th>Govt official</th>
-                                <td>{{$maleGovtofficial}}</td>
-                                <td>{{$femaleGovtofficial}}</td>
-                                <td>{{$maleGovtofficial + $femaleGovtofficial}}</td>
-                            </tr>
-                            <tr>
-                                <th>Local leaders</th>
-                                <td>{{$maleLocalleaders}}</td>
-                                <td>{{$femaleLocalleaders}}</td>
-                                <td>{{$maleLocalleaders + $femaleLocalleaders}}</td>
-                            </tr>
-                            <tr>
-                                <th>Youth leaders</th>
-                                <td>{{$maleYouthleaders}}</td>
-                                <td>{{$femaleYouthleaders}}</td>
-                                <td>{{$maleYouthleaders + $femaleYouthleaders }}</td>
-                            </tr>
-                            <tr>
-                                <th>Media persons</th>
-                                <td>{{$maleMediapersons}}</td>
-                                <td>{{$femaleMediapersons}}</td>
-                                <td>{{$maleMediapersons + $femaleMediapersons}}</td>
-                            </tr>
-                            <tr>
-                                <th>Civil society/NGO</th>
-                                <td>{{$maleCivilsocietyNGO}}</td>
-                                <td>{{$femaleCivilsocietyNGO}}</td>
-                                <td>{{$maleCivilsocietyNGO + $femaleCivilsocietyNGO}}</td>
-                            </tr>
-                            <tr>
-                                <th>Security</th>
-                                <td>{{$maleSecurity}}</td>
-                                <td>{{$femaleSecurity}}</td>
-                                <td>{{$maleSecurity + $femaleSecurity}}</td>
-                            </tr>
-                            <tr>
-                                <th>Court/Lawyers</th>
-                                <td>{{$maleCourtLawyers}}</td>
-                                <td>{{$femaleCourtLawyers}}</td>
-                                <td>{{$maleCourtLawyers + $femaleCourtLawyers}}</td>
-                            </tr>
-                            <tr>
-                                <th>Activists/human rights</th>
-                                <td>{{$maleActivistshumanrights}}</td>
-                                <td>{{$femaleActivistshumanrights}}</td>
-                                <td>{{$maleActivistshumanrights + $femaleActivistshumanrights}}</td>
-                            </tr>
-                            <tr>
-                                <th>Others</th>
-                                <td>{{$maleOthers}}</td>
-                                <td>{{$femaleOthers}}</td>
-                                <td>{{$maleOthers + $femaleOthers}}</td>
-                            </tr>
-                            <tr>
-                                <th>Total</th>
-                                <td>{{$maleBelow15 + $male15_29 + $male30_45 + $male45Above}}</td>
-                                <td>{{$femaleBelow15 + $female15_29 + $female30_45 + $female45Above}}</td>
-                                <td>{{$maleBelow15 + $femaleBelow15 + $male15_29 + $female15_29 + $male30_45 + $female30_45 + $male45Above + $female45Above}}</td>
-                            </tr>
-                        </table>
                     </div>
                 </div>
             </div>
