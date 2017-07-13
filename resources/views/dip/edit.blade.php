@@ -29,13 +29,13 @@
                         </div>
                         <div class="x_content">
                             <br />
-                           {!! Form::open( array( 'route'=> 'dip.store','files' => true,'accept-charset'=>'UTF-8','method'=>'POST', 'class'=>'form-horizontal' ) ) !!}
+                           {!! Form::open( array( 'route'=> 'dip.update',$posts->id,'files' => true,'accept-charset'=>'UTF-8','method'=>'POST', 'class'=>'form-horizontal' ) ) !!}
                                 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">Name of Activities
                         <span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                {!! Form::text('name', '' ,['class' => 'form-control'] ) !!}
+                                {!! Form::text('name', isset($posts) ? $posts->name : '' ,['class' => 'form-control'] ) !!}
                                 </div>
                             </div>
                             <div class="form-group">
@@ -44,39 +44,33 @@
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control" id="sel1" name="act_type">
                                 <option value="0">--Select--</option>
-                                <option value="1">Capacity development  </option>
-                                <option value="2">Planning</option>
-                                <option value="3">Meeting/workshop</option>
-                                <option value="4">Research/study</option>
-                                <option value="5">Dialogue/consultation   </option>
-                                <option value="6">Awareness</option>
-                                <option value="7">Seed-grant</option>
-                                <option value="8">Trust Building</option>
-                                <option value="9">Outreach</option>
-                                <option value="10">Media</option>
-                                <option value="11">Mediation</option>
-                                <option value="12">Staff orientation</option>
-                                <option value="13">Legal aid </option>
+
+                                <option  value="1" {{ ($posts->act_type=='1') 'selected' ?  : ''}}>Capacity development  </option>
+                                <option value="2" {{ ($posts->act_type=='2') 'selected' ?  : ''}} >Planning</option>
+                                <option value="3" {{ ($posts->act_type=='3') 'selected' ?  : ''}}>Meeting/workshop</option>
+                                <option value="4" {{ ($posts->act_type=='4') 'selected' ?  : ''}} >Research/study</option>
+                                <option value="5" {{ ($posts->act_type=='5') 'selected' ?  : ''}} >Dialogue/consultation   </option>
+                                <option value="6" {{ ($posts->act_type=='6') 'selected' ?  : ''}} >Awareness</option>
+                                <option value="7" {{ ($posts->act_type=='7') 'selected' ?  : ''}} >Seed-grant</option>
+                                <option value="8" {{ ($posts->act_type=='8') 'selected' ?  : ''}} >Trust Building</option>
+                                <option value="9" {{ ($posts->act_type=='9') 'selected' ?  : ''}} >Outreach</option>
+                                <option value="10" {{ ($posts->act_type=='10') 'selected' ?  : ''}} >Media</option>
+                                <option value="11" {{ ($posts->act_type=='11') 'selected' ?  : ''}} >Mediation</option>
+                                <option value="12" {{ ($posts->act_type=='12') 'selected' ?  : ''}} >Staff orientation</option>
+                                <option value="13" {{ ($posts->act_type=='13') 'selected' ?  : ''}} >Legal aid </option>
                                 <option value="14">Others</option>
                                                             
                                 </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
-
-                                <span class="required">*</span></label>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                {!! Form::text('obj', '' ,['class' => 'form-control'] ) !!}
-                                </div>
-                            </div>    
+                            
                                 
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">
                                 Expected outcomes
                                 <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                {!! Form::text('out', '' ,['class' => 'form-control'] ) !!}
+                                {!! Form::text('out', isset($posts) ? $posts->out : '' ,['class' => 'form-control'] ) !!}
                                 </div>
                             </div>    
                             <div class="form-group">
@@ -85,7 +79,7 @@ Indicator for this activity
                                 <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
-                                        <select class="form-control" id="sel1" name="ind_act[]">
+                                        <select class="form-control" id="sel1" name="act_type">
                                 <option value="0">--Select--</option>
                                 <option value="1">Outcome </option>
                                 <option value="2">Output</option>
@@ -95,7 +89,7 @@ Indicator for this activity
                                 <div class="form-group">
                                      <label class="control-label" for="first-name">
                                   Indicator No: </label>
-                                    {!! Form::text('ind_act[]', '' ,['class' => 'form-control'] ) !!}
+                                    {!! Form::text('ind', '' ,['class' => 'form-control'] ) !!}
                                 </div>
                                 </div>
 
@@ -105,7 +99,7 @@ Indicator for this activity
 Priority of police strategy
                                 <span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                {!! Form::text('police_str', '' ,['class' => 'form-control'] ) !!}
+                                {!! Form::text('police_str', isset($posts) ? $posts->police_str : '' ,['class' => 'form-control'] ) !!}
                                 </div>
                             </div>  
                                 
@@ -131,42 +125,42 @@ Priority of police strategy
                                 {!! Form::label('imp_area','Implementation area:(VDCs or Venue)',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
 
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                {!! Form::text('imp_area', '' ,['class' => 'form-control'] ) !!}
+                                {!! Form::text('imp_area', isset($posts) ? $posts->imp_area : '' ,['class' => 'form-control'] ) !!}
                                 </div>
 
                             </div> 
                             <div class="form-group">
-                                {!! Form::label('est_ben','Estimated beneficiaries /participants (No)',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
+                                {!! Form::label('imp_area','Estimated beneficiaries /participants (No)',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('dis','Disaggregation',array('class'=>'control-label')) !!}
-                                                {!! Form::text('est_ben[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('imp_area[]', isset($posts) ? $posts->imp_area[0] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                     {!! Form::label('f','Female',array('class'=>'control-label')) !!}
-                                                    {!! Form::text('est_ben[]', '' ,['class' => 'form-control'] ) !!}
+                                                    {!! Form::text('imp_area[]', isset($posts) ? $posts->imp_area[1] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                     {!! Form::label('m','Male',array('class'=>'control-label')) !!}
-                                                    {!! Form::text('est_ben[]', '' ,['class' => 'form-control'] ) !!}
+                                                    {!! Form::text('imp_area[]', isset($posts) ? $posts->imp_area[2] : '' ,['class' => 'form-control'] ) !!}
                                                 </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('total','Total',array('class'=>'control-label')) !!}
-                                                {!! Form::text('est_ben[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('imp_area[]', isset($posts) ? $posts->imp_area[3] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('dis_g','Dis. Group',array('class'=>'control-label')) !!}
-                                                 {!! Form::text('est_ben[]', '' ,['class' => 'form-control'] ) !!}
+                                                 {!! Form::text('imp_area[]',isset($posts) ? $posts->imp_area[4] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                     </div>
@@ -183,31 +177,31 @@ Priority of police strategy
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('type','Type',array('class'=>'control-label ')) !!}
-                                                {!! Form::text('p_budget[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('p_budget[]', isset($posts) ? $posts->p_budget[0] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('travel','Travel',array('class'=>'control-label')) !!}
-                                                {!! Form::text('p_budget[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('p_budget[]', isset($posts) ? $posts->p_budget[1] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('ac','Accom/Per-diem',array('class'=>'control-label')) !!}
-                                                {!! Form::text('p_budget[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('p_budget[]', isset($posts) ? $posts->p_budget[2] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('program','Program',array('class'=>'control-label')) !!}
-                                                {!! Form::text('p_budget[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('p_budget[]',isset($posts) ? $posts->p_budget[3] : '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-12 col-xs-12">
                                             <div class="form-group">
                                                 {!! Form::label('total','Total',array('class'=>'control-label')) !!}
-                                                {!! Form::text('p_budget[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('p_budget[]', isset($posts) ? $posts->p_budget[4]: '' ,['class' => 'form-control'] ) !!}
                                             </div>
                                         </div>
                                     </div> 
@@ -218,17 +212,17 @@ Priority of police strategy
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                 <select class="form-control" id="sel1" name="target">
                                 <option value="0">--Select--</option>
-                                <option value="1">Marginalized Community</option>
-                                <option value="2">Women</option>
-                                <option value="3">Police/Security institution</option>
-                                <option value="4">Court/Lawyers</option>
-                                <option value="5">Mediators/Centre</option>
-                                <option value="6">Activist/professional</option>
-                                <option value="7">Other Govt. organization</option>
-                                <option value="8">General community</option>
-                                <option value="9">Civil society</option>
-                                <option value="10">Political leaders</option>
-                                <option value="11">Journalist</option>
+                                <option value="1"  {{ ($posts->target=='1') 'selected' ?  : ''}} >Marginalized Community</option>
+                                <option value="2"  {{ ($posts->target=='2') 'selected' ?  : ''}} >Women</option>
+                                <option value="3"  {{ ($posts->target=='3') 'selected' ?  : ''}} >Police/Security institution</option>
+                                <option value="4"  {{ ($posts->target=='4') 'selected' ?  : ''}} >Court/Lawyers</option>
+                                <option value="5"  {{ ($posts->target=='5') 'selected' ?  : ''}} >Mediators/Centre</option>
+                                <option value="6"  {{ ($posts->target=='6') 'selected' ?  : ''}} >Activist/professional</option>
+                                <option value="7"  {{ ($posts->target=='7') 'selected' ?  : ''}} >Other Govt. organization</option>
+                                <option value="8"  {{ ($posts->target=='8') 'selected' ?  : ''}} >General community</option>
+                                <option value="9"  {{ ($posts->target=='9') 'selected' ?  : ''}} >Civil society</option>
+                                <option value="10"  {{ ($posts->target=='10') 'selected' ?  : ''}} >Political leaders</option>
+                                <option value="11"  {{ ($posts->target=='11') 'selected' ?  : ''}} >Journalist</option>
                                 <option value="12">Others</option>
                                                                                            
                                 </select>
@@ -238,7 +232,7 @@ Priority of police strategy
                                 {!! Form::label('name','Implementing Partners',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
 
                                 <div class="col-md-6 col-sm-6 col-xs-12" id="i_partners">
-                                    {!! Form::text('i_partners[]', '' ,['class' => 'form-control'] ) !!}
+                                    {!! Form::text('i_partners[]', isset($posts) ? $posts->i_partners[] : ''  ,['class' => 'form-control'] ) !!}
                     
                                 </div>
                                 <div class="addmore"  >
@@ -263,7 +257,7 @@ Priority of police strategy
                             <div class="form-group">
                                 {!! Form::label('name','Collaborative Partners',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                  <div class="col-md-6 col-sm-6 col-xs-12">
-                                    {!! Form::text('c_partners[]', '' ,['class' => 'form-control'] ) !!}
+                                    {!! Form::text('c_partners[]',  isset($posts) ? $posts->c_partners[] : '' ,['class' => 'form-control'] ) !!}
                                 </div>
                                 <div class="addmore">
                                     <a href="javascript:;" class="addmorebtn btn btn-primary"><i class="fa fa-plus"></i> Add New </a>
@@ -280,7 +274,7 @@ Priority of police strategy
                             <div class="form-group">
                                 {!! Form::label('r_persons[]','Resource persons',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    {!! Form::text('r_persons[]', '' ,['class' => 'form-control'] ) !!}
+                                    {!! Form::text('r_persons[]',  isset($posts) ? $posts->r_persons[] : '' ,['class' => 'form-control'] ) !!}
                                 </div>
                                 <div class="addmore">
                                     <a href="javascript:;" class="addmorebtn btn btn-primary"><i class="fa fa-plus"></i> Add New </a>
@@ -302,19 +296,19 @@ Priority of police strategy
                                          <div class="col-md-6">
                                              <div class="form-group">
                                                  {!! Form::label('contact_person','Name:',array('class'=>'control-label')) !!}
-                                                 {!! Form::text('contact_person[]', '' ,['class' => 'form-control'] ) !!}
+                                                 {!! Form::text('contact_person[]',  isset($posts) ? $posts->c_persons[0] : '' ,['class' => 'form-control'] ) !!}
                                              </div>
                                          </div>
                                          <div class="col-md-6">
                                              <div class="form-group">
                                                 {!! Form::label('contact_person','Position:',array('class'=>'control-label')) !!}
-                                                {!! Form::text('contact_person[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('contact_person[]',  isset($posts) ? $posts->c_persons[1] : '' ,['class' => 'form-control'] ) !!}
                                              </div>
                                          </div>
                                          <div class="col-md-6">
                                              <div class="form-group">
                                                  {!! Form::label('contact_person','Cell:',array('class'=>'control-label')) !!} 
-                                                {!! Form::text('contact_person[]', '' ,['class' => 'form-control'] ) !!}
+                                                {!! Form::text('contact_person[]',  isset($posts) ? $posts->c_persons[2] : '' ,['class' => 'form-control'] ) !!}
                                              </div>
                                          </div>
                                      </div>

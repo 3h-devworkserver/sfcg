@@ -52,11 +52,11 @@ $(document).ready(function(){
 
 
 	var counter = 0;
-    $(document).on('click','#btn', function() {
+    $(document).on('click','.addmorebtn', function() {
     counter++;
 
         var html = $('.add').html();
-        $('#iptn').append(html);
+        $('#i_partners').append(html);
        
         });
 

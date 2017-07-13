@@ -30,10 +30,10 @@
                             <li><a href="#">Dashboard</a></li>
                         </ul>
                     </li>
-
-                    <li {{ Request::is('/project') ? 'active open' : '' }} >
+                    
+                    <li class="{{ active_class(Active::checkUriPattern('project*')) }}" >
                         <a ><i class="fa fa-edit"></i> Project Management<span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
+                        <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('project*'), 'display: block;') }}">
                             <li><a href="{{ route('project.index') }}">All Projects</a></li>
                             <li><a href="{{ route('project.create') }}">Add New Project</a></li>
                         </ul>
@@ -51,20 +51,28 @@
                           </li>
                       </ul>
                     </li>
-
-                    <li {{ Request::is('/trainings') ? 'active open' : '' }} >
+                    
+                    <li class="{{ active_class(Active::checkUriPattern('trainings*')) }}">
                         <a ><i class="fa fa-edit"></i> Training Management <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
+                        <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('trainings*'), 'display: block;') }}">
                             <li><a href="{{ route('trainings.index') }}">All Trainings</a></li>
                             <li><a href="{{ route('trainings.create') }}">Add New Training</a></li>
                         </ul>
                     </li>
 
-                    <li {{ Request::is('/ngo') ? 'active open' : '' }} >
+                    <li class="{{ active_class(Active::checkUriPattern('ngo*')) }}" >
                         <a ><i class="fa fa-edit"></i> NGO Management <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu">
+                        <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('ngo*'), 'display: block;') }}">
                             <li><a href="{{ route('ngo.index') }}">All NGO</a></li>
                             <li><a href="{{ route('ngo.create') }}">Add New NGO</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="{{ active_class(Active::checkUriPattern('staffs*')) }}" >
+                        <a ><i class="fa fa-edit"></i> Staff Management <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('staffs*'), 'display: block;') }}">
+                            <li><a href="{{ route('staffs.index') }}">All Staffs</a></li>
+                            <li><a href="{{ route('staffs.create') }}">Add New Staff</a></li>
                         </ul>
                     </li>
 
