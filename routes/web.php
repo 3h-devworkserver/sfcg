@@ -27,11 +27,13 @@ Route::resource('ngo','NGOController');
 
 Route::resource('staffs','StaffController');
 
+Route::get('settings/generalsetting', 'SettingController@generalSetting');
+Route::post('settings/generalsetting', 'SettingController@storeGeneralSetting');
+Route::patch('settings/generalsetting', 'SettingController@storeGeneralSetting');
+
+Route::get('dip/index', ['as' => 'dip.index','uses' => 'DIPController@index']);
 Route::get('dip/create', ['as' => 'dip.create','uses' => 'DIPController@create']);
-Route::get('dip/store', ['as' => 'dip.store','uses' => 'DIPController@store']);
-Route::get('admin/post', ['as' => 'post','uses' => 'Backend\PostController@index']);
-Route::get('post/create', ['as' => 'post.create','uses' => 'Backend\PostController@create']);
-Route::post('post/store', ['as' => 'post.store','uses' => 'Backend\PostController@store']);
-Route::get('post/edit/{id}', ['as' => 'post.edit','uses' => 'Backend\PostController@edit']);
-Route::patch('post/update/{id}', ['as' => 'post.update','uses' => 'Backend\PostController@update']);
-Route::get('post/delete/{id}', ['as' => 'post.delete','uses' => 'Backend\PostController@destroy']);
+Route::post('dip/store', ['as' => 'dip.store','uses' => 'DIPController@store']);
+Route::get('dip/edit/{id}', ['as' => 'dip.edit','uses' => 'DIPController@edit']);
+Route::patch('dip/update/{id}', ['as' => 'dip.update','uses' => 'DIPController@update']);
+Route::delete('dip/delete/{id}', ['as' => 'dip.destroy','uses' => 'DIPController@destroy']);

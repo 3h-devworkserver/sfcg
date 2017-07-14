@@ -9,7 +9,7 @@
         <!-- menu profile quick info -->
         <div class="profile clearfix">
             <div class="profile_pic">
-                <img src="{!! asset('production/images/img.jpg') !!}" alt="..." class="img-circle profile_img">
+                <img src="{!! asset('3hammers_footer.png') !!}" alt="..." class="img-circle profile_img">
             </div>
             <div class="profile_info">
                 <span>Welcome,</span>
@@ -32,7 +32,7 @@
                     </li>
                     
                     <li class="{{ active_class(Active::checkUriPattern('project*')) }}" >
-                        <a ><i class="fa fa-edit"></i> Project Management<span class="fa fa-chevron-down"></span></a>
+                        <a ><i class="fa fa-tasks"></i> Project Management<span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('project*'), 'display: block;') }}">
                             <li><a href="{{ route('project.index') }}">All Projects</a></li>
                             <li><a href="{{ route('project.create') }}">Add New Project</a></li>
@@ -53,7 +53,7 @@
                     </li>
                     
                     <li class="{{ active_class(Active::checkUriPattern('trainings*')) }}">
-                        <a ><i class="fa fa-edit"></i> Training Management <span class="fa fa-chevron-down"></span></a>
+                        <a ><i class="fa fa-university"></i> Training Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('trainings*'), 'display: block;') }}">
                             <li><a href="{{ route('trainings.index') }}">All Trainings</a></li>
                             <li><a href="{{ route('trainings.create') }}">Add New Training</a></li>
@@ -61,7 +61,7 @@
                     </li>
 
                     <li class="{{ active_class(Active::checkUriPattern('ngo*')) }}" >
-                        <a ><i class="fa fa-edit"></i> NGO Management <span class="fa fa-chevron-down"></span></a>
+                        <a ><i class="fa fa-building-o"></i> NGO Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('ngo*'), 'display: block;') }}">
                             <li><a href="{{ route('ngo.index') }}">All NGO</a></li>
                             <li><a href="{{ route('ngo.create') }}">Add New NGO</a></li>
@@ -69,10 +69,17 @@
                     </li>
                     
                     <li class="{{ active_class(Active::checkUriPattern('staffs*')) }}" >
-                        <a ><i class="fa fa-edit"></i> Staff Management <span class="fa fa-chevron-down"></span></a>
+                        <a ><i class="fa fa-users"></i> Staff Management <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('staffs*'), 'display: block;') }}">
                             <li><a href="{{ route('staffs.index') }}">All Staffs</a></li>
                             <li><a href="{{ route('staffs.create') }}">Add New Staff</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="{{ active_class(Active::checkUriPattern('settings*')) }}" >
+                        <a ><i class="fa fa-cogs"></i> Settings <span class="fa fa-chevron-down"></span></a>
+                        <ul class="nav child_menu" style="display: none; {{ active_class(Active::checkUriPattern('settings*'), 'display: block;') }}">
+                            <li><a href="{{url('/settings/generalsetting')}}">General Setting</a></li>
                         </ul>
                     </li>
 

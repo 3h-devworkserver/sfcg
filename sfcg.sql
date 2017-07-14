@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2017 at 08:50 AM
+-- Generation Time: Jul 14, 2017 at 07:02 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.20
 
@@ -28,24 +28,53 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `dips` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `act_type` int(20) NOT NULL,
-  `obj` varchar(255) NOT NULL,
-  `outcome` varchar(255) NOT NULL,
-  `ind_act` varchar(255) NOT NULL,
-  `police_str` varchar(255) NOT NULL,
-  `imp_date` varchar(255) NOT NULL,
-  `imp_area` varchar(255) NOT NULL,
-  `est_ben` varchar(255) NOT NULL,
-  `p_budget` varchar(255) NOT NULL,
-  `target_grp` int(20) NOT NULL,
-  `i_partners` varchar(255) NOT NULL,
-  `c_partners` varchar(255) NOT NULL,
-  `r_persons` varchar(255) NOT NULL,
-  `contact_person` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+  `name` varchar(255) DEFAULT NULL,
+  `act_type` varchar(255) DEFAULT NULL,
+  `act_others` varchar(255) DEFAULT NULL,
+  `obj` varchar(255) DEFAULT NULL,
+  `outcome` varchar(255) DEFAULT NULL,
+  `ind_act` varchar(255) DEFAULT NULL,
+  `ind_no` varchar(255) DEFAULT NULL,
+  `police_str` varchar(255) DEFAULT NULL,
+  `imp_date` varchar(255) DEFAULT NULL,
+  `imp_area` varchar(255) DEFAULT NULL,
+  `eb_dis` varchar(255) DEFAULT NULL,
+  `eb_female` varchar(255) DEFAULT NULL,
+  `eb_male` varchar(255) DEFAULT NULL,
+  `eb_total` varchar(255) DEFAULT NULL,
+  `eb_dis_grp` varchar(255) DEFAULT NULL,
+  `pb_type` varchar(255) DEFAULT NULL,
+  `pb_travel` varchar(255) DEFAULT NULL,
+  `pb_accom` varchar(255) DEFAULT NULL,
+  `pb_program` varchar(255) DEFAULT NULL,
+  `pb_total` varchar(255) DEFAULT NULL,
+  `target_grp` varchar(255) DEFAULT NULL,
+  `tg_others` varchar(255) DEFAULT NULL,
+  `i_partners` varchar(255) DEFAULT NULL,
+  `c_partners` varchar(255) DEFAULT NULL,
+  `r_persons` varchar(255) DEFAULT NULL,
+  `res_p` varchar(255) DEFAULT NULL,
+  `ct_name` varchar(255) DEFAULT NULL,
+  `ct_pos` varchar(255) DEFAULT NULL,
+  `ct_cell` varchar(255) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `dips`
+--
+
+INSERT INTO `dips` (`id`, `name`, `act_type`, `act_others`, `obj`, `outcome`, `ind_act`, `ind_no`, `police_str`, `imp_date`, `imp_area`, `eb_dis`, `eb_female`, `eb_male`, `eb_total`, `eb_dis_grp`, `pb_type`, `pb_travel`, `pb_accom`, `pb_program`, `pb_total`, `target_grp`, `tg_others`, `i_partners`, `c_partners`, `r_persons`, `res_p`, `ct_name`, `ct_pos`, `ct_cell`, `created_at`, `updated_at`) VALUES
+(3, 'name', 'others', 'act_others', 'obj', 'outcome', '0', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', 'others', 'tg_others', 'i_partners[]', 'c_partners[]', 'r_persons[]', '0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:28:01', '2017-07-13 06:28:01'),
+(4, 'name', '0', '', 'obj', 'outcome', '0', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', '0', '', 'i_partners[],sddss', 'c_partners[],sdsdcsdf,dsdsd', 'r_persons[]', '0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:28:31', '2017-07-13 06:28:31'),
+(5, 'name', 'others', 'cxcvvxc', 'obj', 'outcome', '0', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', '0', '', 'cxzcz,czcz,i_partners[]', 'c_partners[]', 'r_persons[]', '0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:29:18', '2017-07-13 06:29:18'),
+(7, NULL, '0', '', NULL, NULL, '0', NULL, NULL, '07/13/2017', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', '', '', '', '0', NULL, NULL, NULL, '2017-07-13 06:44:05', '2017-07-13 06:44:05'),
+(8, NULL, '0', '', NULL, NULL, '0', NULL, NULL, '07/13/2017', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', '', '', '', '0', NULL, NULL, NULL, '2017-07-13 06:44:53', '2017-07-13 06:44:53'),
+(9, 'name', '0', '', 'obj', 'outcome', '0', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', '0', '', 'i_partners[]', 'c_partners[]', 'r_persons[]', '0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:45:03', '2017-07-13 06:45:03'),
+(10, NULL, '0', '', NULL, NULL, '0', NULL, NULL, '07/13/2017', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0', '', '', '', '', '0', NULL, NULL, NULL, '2017-07-13 06:55:33', '2017-07-13 06:55:33'),
+(11, 'name', '0', '', 'obj', 'outcome', '0', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', '0', '', 'i_partners[]', 'c_partners[]', 'r_persons[]', '0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:55:48', '2017-07-13 06:55:48'),
+(12, 'name', '4', '', 'obj', 'outcome', '1', 'ind_no', 'police_str', '07/13/2017', 'imp_area', 'eb_dis', 'eb_female', 'eb_male', 'eb_total', 'eb_dis_grp', 'pb_type', 'pb_travel', 'pb_accom', 'pb_program', 'pb_total', 'others', 'tg_others', 'i_partners[],cdsvsd', 'c_partners[],dfsdf,fsfsf', 'r_persons[],dfsfs', '1,0', 'ct_name', 'ct_pos', 'ct_cell', '2017-07-13 06:56:43', '2017-07-13 06:56:43');
 
 -- --------------------------------------------------------
 
@@ -149,6 +178,34 @@ INSERT INTO `districts` (`id`, `district_id`, `district_name`, `district_headqua
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `general_settings`
+--
+
+CREATE TABLE `general_settings` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `tagline` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_title` varchar(350) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `meta_desc` text COLLATE utf8_unicode_ci,
+  `meta_keyword` text COLLATE utf8_unicode_ci,
+  `misc_javascript` text COLLATE utf8_unicode_ci,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `logo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `favicon` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `general_settings`
+--
+
+INSERT INTO `general_settings` (`id`, `title`, `tagline`, `meta_title`, `meta_desc`, `meta_keyword`, `misc_javascript`, `email`, `logo`, `favicon`, `created_at`, `updated_at`) VALUES
+(10, 'SFCG', NULL, 'SFCG', 'DBMS', 'DBMS', NULL, 'admin@3hammers.com', 'Yh1vq-3hammers.png', '5ptZC-3hammers_footer.png', '2017-07-13 05:13:05', '2017-07-13 05:13:05');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `migrations`
 --
 
@@ -191,8 +248,8 @@ CREATE TABLE `ngo` (
 --
 
 INSERT INTO `ngo` (`id`, `name`, `address`, `contact_no`, `email`, `established_date`, `primary_project`, `funded_by`, `created_at`, `updated_at`) VALUES
-(1, 'testing', 'asdfsdaf', 'dsafd', 'asdfsadfsdfdsf@dklasf.co', 'Invalid date', 'asldfj', 'falsdfj', '2017-07-12 05:16:37', '2017-07-12 23:45:10'),
-(2, 'uytuytu', 'ytru', 'rturtu', 'rtuty@ajf.com', '08/01/2017', 'asdfasdfklj', 'asdfewf', '2017-07-12 23:45:41', '2017-07-12 23:45:58');
+(3, 'NGO 1', 'Lagankhel', '9841545445', 'ngo@gmail.com', '05/05/2016', 'Rural Development', 'UNESCO', '2017-07-13 14:58:38', '2017-07-13 14:58:38'),
+(4, 'NGO 2', 'Bhaktapur', '9841245151', 'ngo2@gmail.com', '08/09/2016', 'Education', 'UNICEF', '2017-07-13 14:59:50', '2017-07-13 15:00:10');
 
 -- --------------------------------------------------------
 
@@ -232,8 +289,8 @@ CREATE TABLE `projects` (
 
 INSERT INTO `projects` (`id`, `project_code`, `project_name`, `donor_code`, `partners`, `zone_id`, `district_id`, `signed_date`, `total_budget`, `created_at`, `updated_at`) VALUES
 (1, 'p-45', 'Project 1', 'alsdf asdlf', 'lkasjdf askd', 0, 0, '07/20/2017', 5000, '2017-07-10 23:22:01', '2017-07-10 23:22:18'),
-(3, 'yttytyty', 'tytytyt', 'tytyty', 'tytyty', 3, 10, '07/12/2017', 787878, '2017-07-12 00:44:26', '2017-07-12 01:34:33'),
-(4, 'fghfgh', 'fghgfh', 'fghgfh', 'fghfghgfh', 3, 10, '07/14/2017', 98989898, '2017-07-12 00:45:33', '2017-07-12 21:38:05');
+(5, 'PC-100', 'Project 100', 'DC-11', 'UNESCO', 3, 12, '06/27/2017', 550000, '2017-07-13 14:54:08', '2017-07-13 14:54:43'),
+(6, 'dfgdfg', 'dfgfdg', 'dfgfdg', 'dfgf', 3, 14, '07/13/2017', 1, '2017-07-13 10:31:11', '2017-07-13 10:52:29');
 
 -- --------------------------------------------------------
 
@@ -273,7 +330,7 @@ CREATE TABLE `staffs` (
   `joined_date` varchar(255) NOT NULL,
   `designation` varchar(100) NOT NULL,
   `salary` decimal(10,2) NOT NULL,
-  `project_code` varchar(191) NOT NULL,
+  `project_id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -282,8 +339,9 @@ CREATE TABLE `staffs` (
 -- Dumping data for table `staffs`
 --
 
-INSERT INTO `staffs` (`id`, `name`, `address`, `contact_no`, `email`, `joined_date`, `designation`, `salary`, `project_code`, `created_at`, `updated_at`) VALUES
-(1, 'tytyty', 'uiu', 'iui', 'uuiuuiuiuiu@fsdlf.com', '07/18/2017', 'kjkjkjkjkj', '54.02', 'p-45', '2017-07-13 00:46:22', '2017-07-13 00:46:22');
+INSERT INTO `staffs` (`id`, `name`, `address`, `contact_no`, `email`, `joined_date`, `designation`, `salary`, `project_id`, `created_at`, `updated_at`) VALUES
+(3, 'Dinesh Karki', 'Baneshwor', '9845454545', 'dinesh@gmail.com', '12/06/2016', 'Admin', '95000.00', 1, '2017-07-13 15:01:46', '2017-07-13 15:01:46'),
+(4, 'Yojan Shrestha', 'Lagankhel', '98544512121', 'yojan@3hammers.com', '07/13/2016', 'Developer', '45000.00', 5, '2017-07-13 15:02:47', '2017-07-13 15:02:47');
 
 -- --------------------------------------------------------
 
@@ -307,8 +365,9 @@ CREATE TABLE `trainings` (
 --
 
 INSERT INTO `trainings` (`id`, `name`, `age_group`, `caste`, `gender`, `professional`, `created_at`, `updated_at`) VALUES
-(1, 'yojan shrestha', '30-45', 'Others', 'Male', 'Local leaders', '2017-07-11 05:40:01', '2017-07-11 06:29:41'),
-(4, 'asdfsdaf', '15-29', 'Tharu', 'Female', 'Activists/human rights', '2017-07-11 06:47:06', '2017-07-11 06:47:16');
+(5, 'Yojan Shrestha', '15-29', 'Others', 'Male', 'Activists/human rights', '2017-07-13 14:55:33', '2017-07-13 14:57:26'),
+(6, 'Dinesh Karki', '30-45', 'Brahmin/Chhetri', 'Male', 'Youth leaders', '2017-07-13 14:56:06', '2017-07-13 14:56:06'),
+(7, 'Sarita Shah', '45-Above', 'Madhesi/Terai', 'Female', 'Govt official', '2017-07-13 14:56:33', '2017-07-13 14:56:33');
 
 -- --------------------------------------------------------
 
@@ -331,7 +390,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Three Hammers', 'admin@3hammers.com', '$2y$10$NEYa6a.UqW0Fqt.m5CjJ9e5zBf0C0NEVfyc2JiueEs4wYCAQAmQ4.', 'EX9F6WSVFxq9q9FF2lxntJvSaZpVfvAIAzvjc32PxzLUKAoaOGA5Bz3Hbz5B', NULL, NULL);
+(1, 'Three Hammers', 'admin@3hammers.com', '$2y$10$NEYa6a.UqW0Fqt.m5CjJ9e5zBf0C0NEVfyc2JiueEs4wYCAQAmQ4.', 'moFRpg1Hch7dZDfo3tsYYbB6Cb8jLgkFDct12IylsYYbESG5K2eI8y8rMQ91', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -385,6 +444,12 @@ ALTER TABLE `districts`
   ADD KEY `zone_id` (`zone_id`);
 
 --
+-- Indexes for table `general_settings`
+--
+ALTER TABLE `general_settings`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
@@ -425,7 +490,7 @@ ALTER TABLE `sessions`
 ALTER TABLE `staffs`
   ADD PRIMARY KEY (`id`),
   ADD KEY `name` (`name`),
-  ADD KEY `project_id` (`project_code`);
+  ADD KEY `project_id` (`project_id`);
 
 --
 -- Indexes for table `trainings`
@@ -454,12 +519,17 @@ ALTER TABLE `zones`
 -- AUTO_INCREMENT for table `dips`
 --
 ALTER TABLE `dips`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `districts`
 --
 ALTER TABLE `districts`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+--
+-- AUTO_INCREMENT for table `general_settings`
+--
+ALTER TABLE `general_settings`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -469,22 +539,22 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `ngo`
 --
 ALTER TABLE `ngo`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `staffs`
 --
 ALTER TABLE `staffs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `trainings`
 --
 ALTER TABLE `trainings`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `users`
 --

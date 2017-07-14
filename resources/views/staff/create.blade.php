@@ -62,14 +62,17 @@
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" >Salary<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{Form::text('salary', null, ['class'=>'form-control col-md-7 col-xs-12'])}}
+                        <div class="input-group">
+                            <span class="input-group-addon">NPR</span>
+                            {{ Form::input('number', 'salary',  null, ['step'=>'any', 'min'=>'1', 'placeholder'=>'Enter Salary', 'class' => 'form-control col-md-7 col-xs-12']) }}
+                        </div>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12" >Assigned Project<span class="required">*</span></label>
                         <div class="col-md-6 col-sm-6 col-xs-12">
-                            {{Form::select('project_code', $project, null, ['class'=>'form-control col-md-7 col-xs-12', 'placeholder'=>'-- Select Project --'])}}
+                            {{Form::select('project_id', $projects, null, ['class'=>'form-control col-md-7 col-xs-12', 'placeholder'=>'-- Select Project --'])}}
                         </div>
                     </div>
 
@@ -77,7 +80,7 @@
                     <div class="form-group" >
                         <div class="col-md-6 col-sm-6
                          col-xs-12 col-md-offset-3">
-                            <a href="{{ route('ngo.index') }}" class="btn btn-primary">Cancel</a>
+                            <a href="{{ route('staffs.index') }}" class="btn btn-primary">Cancel</a>
                             {{-- <button class="btn btn-primary" type="reset">Reset</button> --}}
                             <button type="submit"  class="btn btn-success">Submit</button>
                         </div>

@@ -30,8 +30,8 @@ class StaffController extends Controller
      */
     public function create()
     {
-        $project = Project::pluck('project_name', 'project_code');
-        return view('staff.create', compact('project'));
+        $projects = Project::pluck('project_name', 'id');
+        return view('staff.create', compact('projects'));
     }
 
     /**
@@ -75,8 +75,9 @@ class StaffController extends Controller
      */
     public function edit($id)
     {
-        $ngo = NGO::findOrFail($id);
-        return view('ngo.edit', compact('ngo'));
+        $staff = Staff::findOrFail($id);
+        $projects = Project::pluck('project_name', 'id');
+        return view('staff.edit', compact('projects', 'staff'));
     }
 
     /**
@@ -88,18 +89,19 @@ class StaffController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
+         $this->validate($request,[
             'name' => 'required',
             'address' => 'required',
             'contact_no' => 'required',
             'email' => 'required|email',
-            'established_date' => 'required',
-            'primary_project' => 'required',
-            'funded_by' => 'required',
+            'joined_date' => 'required',
+            'designation' => 'required',
+            'salary' => 'required',
+            'project_id' => 'required',
         ]);
-        $ngo = NGO::findOrFail($id);
-        $ngo->update($request->all());
-        return redirect()->route('ngo.edit', $id)->withFlashSuccess('NGO profile is updated successfully.');
+        $staff = Staff::findOrFail($id);
+        $staff->update($request->all());
+        return redirect()->route('staffs.edit', $id)->withFlashSuccess('Staff profile is updated successfully.');
     }
 
     /**
@@ -110,7 +112,7 @@ class StaffController extends Controller
      */
     public function destroy($id)
     {
-        NGO::destroy($id);
-        return redirect()->route('ngo.index')->withFlashSuccess('NGO profile is deleted successfully.');
+        Staff::destroy($id);
+        return redirect()->route('staffs.index')->withFlashSuccess('Staff profile is deleted successfully.');
     }
 }

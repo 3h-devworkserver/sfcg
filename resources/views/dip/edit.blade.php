@@ -318,7 +318,9 @@ Priority of police strategy
                             
                             </form>
                         </div>
+                        {!! Form::submit('Submit',['class'=>'btn btn-primary']) !!}
                     </div>
+                    {!! Form::close() !!}
                 </div>
             </div>
         </div>

@@ -55,27 +55,27 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Donor Code</label>
+                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Donor Code<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input name="donor_code" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+                                        <input name="donor_code" class="form-control col-md-7 col-xs-12" type="text" name="middle-name" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Partners</label>
+                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Partners<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="partners">
+                                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="partners" required>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Zone</label>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Zone<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        {{Form::select('zone_id', $zones, null, ['placeholder'=>'-- Select Zone --','class'=>'form-control col-md-7 col-xs-12 zone'])}}
+                                        {{Form::select('zone_id', $zones, null, ['placeholder'=>'-- Select Zone --','class'=>'form-control col-md-7 col-xs-12 zone', 'required'])}}
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">District</label>
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">District<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <select class="form-control col-md-7 col-xs-12 district" name="district_id">
+                                        <select class="form-control col-md-7 col-xs-12 district" name="district_id" required>
                                             <option value="">-- Select District --</option>
                                             @foreach($districts as $district)
                                             <option class="hide" data-attr="{{$district->zone_id}}" value="{{$district->district_id}}">{{$district->district_name}}</option>
@@ -102,9 +102,13 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Total Budget</label>
+                                    <label for="middle-name" class="control-label col-md-3 col-sm-3 col-xs-12">Total Budget<span class="required">*</span></label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="total_budget">
+                                        <div class="input-group">
+                                            <span class="input-group-addon">NPR</span>
+                                            {{ Form::input('number', 'total_budget',  null, ['step'=>'any', 'min'=>'1', 'placeholder'=>'Enter Total Budget', 'class' => 'form-control col-md-7 col-xs-12', 'required']) }}
+                                        </div>
+                                        {{-- <input id="middle-name" class="form-control col-md-7 col-xs-12" type="text" name="total_budget"> --}}
                                     </div>
                                 </div>
                                 <div class="ln_solid"></div>
@@ -112,7 +116,7 @@
                                     <div class="col-md-6 col-sm-6
                                      col-xs-12 col-md-offset-3">
 {{--                                        {{ link_to_route('home','Cancel',null, ['class'=>'btn btn-primary']) }}--}}
-                                        <a href="{{ url('home') }}" class="btn btn-primary">Cancel</a>
+                                        <a href="{{ url('/project') }}" class="btn btn-primary">Cancel</a>
                                         {{-- <button class="btn btn-primary" type="reset">Reset</button> --}}
                                         <button type="submit"  class="btn btn-success">Submit</button>
                                     </div>

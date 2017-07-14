@@ -2,3 +2,44 @@
 .form-inline{
 	display: inline;
 }
+img{
+	max-width: 100%;
+}
+.login_content{
+	text-align: left;
+	padding-top: 10px;
+}
+.login-logo .logo-section {
+	width: 55%;
+	margin: 0 auto;
+}
+
+.act-others,
+.tgroupText{
+	margin-top: 10px;
+}
+
+
+/* [id*=_partners] .form-control,
+[id^=_partners] .form-control,
+[id^=_partners] .form-control:last-of-type,
+[id^=_partners] .form-control:last-child{
+	margin-bottom:10px;
+} */
+#i_partners .form-control,
+#c_partners .form-control,
+#r_persons .form-control{
+	margin-bottom: 10px;
+}
+
+#i_partners [class*="col-"] > .form-control:last-child,
+#i_partners [class^="col-"] > .form-control:last-child,
+#c_partners [class*="col-"] > .form-control:last-child,
+#c_partners [class^="col-"] > .form-control:last-child,
+#r_persons [class*="col-"] > .form-control:last-child,
+#r_persons [class^="col-"] > .form-control:last-child{
+	margin-bottom:0;
+}
+.form-horizontal .form-group .form-group .control-label{
+	padding-top: 0;
+}

@@ -43,8 +43,8 @@
                     <td> {{ $staff->email }}</td>
                     <td> {{ $staff->joined_date }}</td>
                     <td> {{ $staff->designation }}</td>
-                    <td> {{ $staff->salary }}</td>
-                    <td> {{ $staff->project }}</td>
+                    <td> NPR {{ $staff->salary }}</td>
+                    <td> {{ $staff->project->project_name }}</td>
                     <td> {{ $staff->created_at }}</td>
                     <td> {{ $staff->updated_at }}</td>
                     <td>
